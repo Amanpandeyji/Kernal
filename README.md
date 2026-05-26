@@ -2,7 +2,7 @@
 
 A comprehensive Linux kernel module demonstrating character device driver implementation with read/write/ioctl interface and mutex synchronization.
 
-## 📋 Project Overview
+##  Project Overview
 
 This project implements:
 - **Kernel Module**: Character device driver with complete file operations
@@ -10,15 +10,15 @@ This project implements:
 - **IOCTL Interface**: Custom commands for device control
 - **User-Space Application**: Comprehensive test suite with interactive menu
 
-## 🎯 Features
+##  Features
 
 ### Kernel Module Features
-- ✅ Character device registration and management
-- ✅ Read/Write operations with buffer management
-- ✅ IOCTL commands for device control
-- ✅ Mutex synchronization for thread safety
-- ✅ Proper error handling and cleanup
-- ✅ Kernel logging for debugging
+- Character device registration and management
+- Read/Write operations with buffer management
+- IOCTL commands for device control
+- Mutex synchronization for thread safety
+- Proper error handling and cleanup
+- Kernel logging for debugging
 
 ### IOCTL Commands
 1. **IOCTL_RESET**: Reset device buffer and flag
@@ -27,17 +27,17 @@ This project implements:
 4. **IOCTL_GET_FLAG**: Get device flag value
 
 ### Test Application Features
-- ✅ Interactive menu-driven interface
-- ✅ Automated test suite mode
-- ✅ Color-coded output for better readability
-- ✅ Comprehensive test coverage:
+-  Interactive menu-driven interface
+-  Automated test suite mode
+-  Color-coded output for better readability
+-  Comprehensive test coverage:
   - Open/Close operations
   - Write/Read operations
   - IOCTL command testing
   - Multiple sequential operations
   - Data verification
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 .
@@ -47,7 +47,7 @@ This project implements:
 └── README.md          # This file
 ```
 
-## 🔧 Prerequisites
+##  Prerequisites
 
 ### Required Packages
 ```bash
@@ -68,7 +68,7 @@ sudo pacman -S linux-headers base-devel
 - Root/sudo privileges for module loading
 - Kernel build headers matching your running kernel
 
-## 🚀 Building the Project
+##  Building the Project
 
 ### 1. Build the Kernel Module
 ```bash
@@ -88,7 +88,7 @@ make test
 
 This creates the `test_chardev` executable.
 
-## 📦 Loading the Kernel Module
+##  Loading the Kernel Module
 
 ### Load the Module
 ```bash
@@ -115,7 +115,7 @@ sudo chmod 666 /dev/chardev
 make load
 ```
 
-## 🧪 Running Tests
+##  Running Tests
 
 ### Interactive Mode
 ```bash
@@ -141,7 +141,7 @@ Run all tests automatically:
 ./test_chardev auto
 ```
 
-## 📊 Monitoring Kernel Messages
+##  Monitoring Kernel Messages
 
 ### View Recent Kernel Logs
 ```bash
@@ -176,7 +176,7 @@ lsmod | grep chardev
 ls /dev/chardev  # Should not exist
 ```
 
-## 🧹 Cleaning Up
+##  Cleaning Up
 
 ### Clean Build Artifacts
 ```bash
@@ -188,7 +188,7 @@ make clean
 make cleanall
 ```
 
-## 📖 Usage Example
+##  Usage Example
 
 Complete workflow:
 
@@ -213,7 +213,7 @@ make unload
 make cleanall
 ```
 
-## 🔍 Code Explanation
+##  Code Explanation
 
 ### Key Components
 
@@ -249,7 +249,7 @@ mutex_unlock(&data->lock);
 - Initializes character device
 - Creates device node in /dev
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Module won't load
 - Check kernel version compatibility
@@ -270,7 +270,7 @@ sudo chmod 666 /dev/chardev
 - Verify kernel headers: `ls /lib/modules/$(uname -r)/build`
 - Update system: `sudo apt-get update && sudo apt-get upgrade`
 
-## 📚 Learning Resources
+##  Learning Resources
 
 ### Concepts Demonstrated
 1. **Character Device Drivers**: Basic kernel device driver architecture
@@ -289,7 +289,7 @@ sudo chmod 666 /dev/chardev
 - `copy_to_user()`, `copy_from_user()` - Safe kernel-user data transfer
 - `mutex_init()`, `mutex_lock_interruptible()`, `mutex_unlock()` - Synchronization
 
-## 🔒 Security Considerations
+##  Security Considerations
 
 - Buffer overflow protection through size checks
 - Safe user-space data transfer using copy_to/from_user
@@ -297,12 +297,8 @@ sudo chmod 666 /dev/chardev
 - Mutex protection against race conditions
 - Input validation in IOCTL commands
 
-## 📝 License
 
-This project is provided for educational purposes. Use at your own risk.
-Module is licensed under GPL (as required for kernel modules).
-
-## 👨‍💻 Development Notes
+##  Development Notes
 
 ### Extending the Driver
 To add new IOCTL commands:
@@ -331,15 +327,4 @@ To add new IOCTL commands:
 - [x] IOCTL_GET_FLAG retrieves flag value
 - [x] Multiple operations work correctly
 - [x] Module unloads cleanly
-
-## 📞 Support
-
-For issues or questions:
-- Check kernel logs: `dmesg`
-- Review error messages
-- Verify all prerequisites are installed
-- Ensure proper permissions
-
----
-
-**Note**: This is a kernel module. Improper use can cause system instability. Always test in a safe environment (VM recommended).
+ use can cause system instability. Always test in a safe environment (VM recommended).
